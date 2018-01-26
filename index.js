@@ -5,6 +5,8 @@ const app = express();
 
 const users = JSON.parse(process.env.USER_MAP);
 
+const port = process.env.PORT || 9321;
+
 app.use(bodyparser.json({ limit: '50mb' }));
 
 app.post('/github-webhook', function(req, res) {
@@ -45,7 +47,7 @@ app.post('/github-webhook', function(req, res) {
     }
 });
 
-app.listen(9321);
+app.listen(port);
 
 function sendMessageToSlackChannel(message) {
     const options = {
