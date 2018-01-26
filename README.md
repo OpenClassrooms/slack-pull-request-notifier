@@ -10,6 +10,8 @@ First, you have to create a [new Slack application](https://api.slack.com/apps),
 
 You must properly set the following environment variables:
 
+`PORT` - Port of the http server. (Optional) (Default port is 9321) 
+
 `SLACK_WEBHOOK` - your Slack webhook URL
 
 Example: `https://hooks.slack.com/services/foo/bar/foobar123`
