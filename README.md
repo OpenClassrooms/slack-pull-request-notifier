@@ -4,6 +4,8 @@
 
 This is a Slackbot written in Node.js that posts channel notifications to ping people when they are added as reviewers to a pull request, when changes are requested, and when those changes are approved.
 
+![Illustration image](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Illustration image")
+
 ## How is it used?
 
 First, you have to create a [new Slack application](https://api.slack.com/apps), then go to `Add features and functionality > Incoming Webhooks` and click on `Add New Webhook to Workspace`.
