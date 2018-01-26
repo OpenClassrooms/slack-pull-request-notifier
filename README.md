@@ -6,7 +6,7 @@ This is a slack bot writted in node.js that notify people when new pull request 
 
 ## How to use it?
 
-First, you have to create a [new slack application](https://api.slack.com/apps), then go to `Add features and functionality > Incoming Webhooks`, finally click on  		`Add New Webhook to Workspace`
+First, you have to create a [new slack application](https://api.slack.com/apps), then go to `Add features and functionality > Incoming Webhooks` and finally click on  		`Add New Webhook to Workspace`
 
 After that, you have to properly set following environment variables :
 
@@ -23,7 +23,7 @@ Example :
         "Ayunn": "richard",
     }
     
-Key (ex: Mystraht) is for your github nickname and value (ex: John) is for your slack nickname.
+Keys (ex: Mystraht) is for your github nickname and values (ex: John) is for your slack nickname.
 
 Then you have to launch node server by typing :
 
@@ -32,7 +32,7 @@ Then you have to launch node server by typing :
 
 Then you have to configure your Github webhook.
 
-Go to your settings and add webhook with following configuration :
+Go to your repository settings and add webhook with following configuration :
 
     Payload URL: http://<YOUR_DOMAIN>:9321/github-webhook
     Content type: application/json
