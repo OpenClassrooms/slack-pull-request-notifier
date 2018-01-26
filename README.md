@@ -2,37 +2,37 @@
 
 ## What is it?
 
-This is a slack bot writted in node.js that notify people when new pull request review is awaiting for them. 
+This is a Slackbot written in Node.js that posts channel notifications to ping people when they are added as reviewers to a pull request, when changes are requested, and when those changes are approved.
 
-## How to use it?
+## How is it used?
 
-First, you have to create a [new slack application](https://api.slack.com/apps), then go to `Add features and functionality > Incoming Webhooks` and finally click on  		`Add New Webhook to Workspace`
+First, you have to create a [new Slack application](https://api.slack.com/apps), then go to `Add features and functionality > Incoming Webhooks` and click on `Add New Webhook to Workspace`.
 
-After that, you have to properly set following environment variables :
+You must properly set the following environment variables:
 
-`SLACK_WEBHOOK` - your slack webhook url
+`SLACK_WEBHOOK` - your Slack webhook URL
 
-Example : `https://hooks.slack.com/services/foo/bar/foobar123`
+Example: `https://hooks.slack.com/services/foo/bar/foobar123`
 
-`USER_MAP` - nickname mapping from github to slack
+`USER_MAP` - nickname mapping from GitHub to Slack
 
-Example :
+Example:
 
     {
         "Mystraht": "john",
         "Ayunn": "richard",
     }
     
-Keys (ex: Mystraht) is for your github nickname and values (ex: John) is for your slack nickname.
+The keys (ex. "Mystraht") correspond to GitHub nicknames, and the values (ex. "John") correspond to Slack nicknames.
 
-Then you have to launch node server by typing :
+You can then launch the Node server by running:
 
     npm install
     npm run start
 
-Then you have to configure your Github webhook.
+You will then have to configure your GitHub webhook.
 
-Go to your repository settings and add webhook with following configuration :
+Go to your repository settings, and add a webhook with the following configuration:
 
     Payload URL: http://<YOUR_DOMAIN>:9321/github-webhook
     Content type: application/json
@@ -43,4 +43,4 @@ Go to your repository settings and add webhook with following configuration :
 
 ## Contributing
 
-Feel free to make pull request!
+Feel free to submit a pull request!
