@@ -4,7 +4,7 @@
 
 This is a Slackbot written in Node.js that posts channel notifications to ping people when they are added as reviewers to a pull request, when changes are requested, and when those changes are approved.
 
-![Illustration image](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Illustration image")
+![Illustration image](https://github.com/OpenClassrooms/slack-pull-request-notifier/blob/master/github-pull-request.png "Illustration image")
 
 ## How is it used?
 
