@@ -44,6 +44,10 @@ Go to your repository settings, and add a webhook with the following configurati
         -> Pull request
         -> Pull request review comment
         -> Pull request review
+        
+## Requirement
+
+This version of Slack pull request notifier is tested with NodeJS v8 LTS.
 
 ## Contributing
 
