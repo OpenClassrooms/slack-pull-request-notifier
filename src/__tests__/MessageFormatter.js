@@ -51,7 +51,7 @@ describe('MessageFormatter.formatMessage should format message coming from githu
             }
         };
         expect(MessageFormatter.formatMessage(requestBody, users))
-            .toBe('<@johnslack> changes requested by erikslack: <http://github.com/pr|TICKET-123_foo> on <http://github.com/openclassrooms/OC|OC> repo.');
+            .toBe('<@johnslack> changes requested by erikslack: <http://github.com/pr|TICKET-123_foo> on <http://github.com/openclassrooms/OC|OC> repo. ');
     });
 
     test('Review has been approved', () => {
