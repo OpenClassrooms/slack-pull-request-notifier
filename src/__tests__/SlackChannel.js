@@ -1,4 +1,5 @@
 jest.mock('request');
+
 const request = require('request');
 const SlackChannel = require('../SlackChannel');
 
