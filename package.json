@@ -1,13 +1,13 @@
 {
   "name": "slack-pull-request-notifier",
   "version": "1.0.0",
-  "description": "",
+  "description": "Slackbot written in Node.js that posts channel notifications to ping people when they are added as reviewers to a pull request, when changes are requested, and when those changes are approved.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest"
   },
-  "author": "",
+  "author": "Mystraht",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
