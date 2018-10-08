@@ -1,7 +1,7 @@
 const MessageFormatter = require('../MessageFormatter');
 
 describe('MessageFormatter.formatMessage should format message coming from github webhook request body', () => {
-    const users = {
+    let users = {
         JohnGithub: 'johnslack',
         ErikGithub: 'erikslack',
     };
@@ -72,5 +72,61 @@ describe('MessageFormatter.formatMessage should format message coming from githu
         };
         expect(MessageFormatter.formatMessage(requestBody, users))
             .toBe('<@johnslack> changes approved by erikslack: <http://github.com/pr|TICKET-123_foo> on <http://github.com/openclassrooms/OC|OC> repo. :tada:');
+    });
+
+    test('Users display name instead of regular name', () => {
+        users = {
+            JohnGithub: 'johnslack',
+            ErikGithub: {
+                id: 'UD214KL',
+                name: 'erikslack',
+            },
+        };
+
+        const requestBody = {
+            action: 'submitted',
+            pull_request: {
+                ...pullRequestMetadata,
+                user: {
+                    login: 'JohnGithub',
+                },
+            },
+            review: {
+                state: 'approved',
+                user: {
+                    login: 'ErikGithub',
+                }
+            }
+        };
+        expect(MessageFormatter.formatMessage(requestBody, users))
+            .toBe('<@johnslack> changes approved by erikslack: <http://github.com/pr|TICKET-123_foo> on <http://github.com/openclassrooms/OC|OC> repo. :tada:');
+    });
+
+    test('Users id instead of regular name', () => {
+        users = {
+            ErikGithub: 'erikslack',
+            JohnGithub: {
+                id: 'UD12312',
+                name: 'johnslack',
+            },
+        };
+
+        const requestBody = {
+            action: 'submitted',
+            pull_request: {
+                ...pullRequestMetadata,
+                user: {
+                    login: 'JohnGithub',
+                },
+            },
+            review: {
+                state: 'approved',
+                user: {
+                    login: 'ErikGithub',
+                }
+            }
+        };
+        expect(MessageFormatter.formatMessage(requestBody, users))
+            .toBe('<@UD12312> changes approved by erikslack: <http://github.com/pr|TICKET-123_foo> on <http://github.com/openclassrooms/OC|OC> repo. :tada:');
     });
 });

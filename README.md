@@ -29,6 +29,16 @@ Example:
     
 The keys (ex. "Mystraht") correspond to GitHub nicknames, and the values (ex. "John") correspond to Slack nicknames.
 
+Slack have issue with space in nickname, in this case use instead:
+
+    {
+        "Mystraht": "john",
+        "Ayunn": {
+          id: "SLACK_USER_ID",
+          name: "richard"
+        },
+    }
+
 You can then launch the Node server by running:
 
     npm install
