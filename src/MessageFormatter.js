@@ -1,7 +1,7 @@
-function getSlackUser (users, githubName, shouldGetId = false) {
+function getSlackUser(users, githubName, shouldGetId = false) {
     const user = users[githubName];
 
-    if (typeof (user) === 'string') {
+    if (typeof(user) === 'string') {
         return user;
     }
 
@@ -12,7 +12,7 @@ function getSlackUser (users, githubName, shouldGetId = false) {
     }
 }
 
-function formatMessage (body, users) {
+function formatMessage(body, users) {
     try {
         let reviewState;
         let reviewer;
