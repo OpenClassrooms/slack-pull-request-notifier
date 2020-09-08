@@ -31,6 +31,10 @@ function formatMessage(body, users) {
                 reviewState = body.review.state;
                 reviewer = body.review.user.login;
 
+                if (reviewState === 'commented') {
+                    return `<@${getSlackUser(users, author, true)}>, ${getSlackUser(users, reviewer)} commented on: <${pullRequestUrl}|${pullRequestName}> on <${repositoryNameUrl}|${repositoryName}> repo.`;
+                }
+
                 if (reviewState !== 'changes_requested' && reviewState !== 'approved') {
                     break;
                 }
