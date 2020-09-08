@@ -31,7 +31,7 @@ function formatMessage(body, users) {
                 reviewState = body.review.state;
                 reviewer = body.review.user.login;
 
-                if (reviewState === 'commented') {
+                if (reviewState === 'commented' && getSlackUser(users, author, true) !== getSlackUser(users, reviewer, true)) {
                     return `<@${getSlackUser(users, author, true)}>, ${getSlackUser(users, reviewer)} commented on: <${pullRequestUrl}|${pullRequestName}> on <${repositoryNameUrl}|${repositoryName}> repo.`;
                 }
 
