@@ -13,11 +13,15 @@ const port = process.env.PORT || 9321;
 app.use(bodyparser.json({ limit: '50mb' }));
 
 app.post('/github-webhook', function(request, res) {
-    const message = MessageFormatter.formatMessage(request.body, users);
-    if (message) {
-        SlackChannel.sendMessage(message);
+    try {
+        const message = MessageFormatter.formatMessage(request.body, users);
+        if (message) {
+            SlackChannel.sendMessage(message);
+        }
+        res.send('');
+    } catch (e) {
+        console.log('ERROR', e);
     }
-    res.send('');
 });
 
 app.listen(port);
